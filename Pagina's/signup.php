@@ -231,7 +231,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"> </script>
+<script src="lib/easing/easing.min.js"></script>
 <script src="lib/waypoints/waypoints.min.js"></script>
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="lib/tempusdominus/js/moment.min.js"></script>
@@ -246,32 +246,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <script src="js/main.js"></script>
 
 <script>
+(document).singlePageNav({filter: ':not(.external)'});
 // Get the password input field
-// var password = document.getElementById("Password");
+var password = document.getElementById("Password");
 
 // Listen for changes to the password field
-// password.addEventListener("input", function() {
+password.addEventListener("input", function() {
     // Get the password value
-//    var passwordValue = password.value;
+    var passwordValue = password.value;
 
     // Check the password against validation rules
-//    if (passwordValue.length < 8) {
+    if (passwordValue.length < 8) {
         // Password is too short
-//        password.setCustomValidity("Password must be at least 8 characters long.");
-//    } else if (!/[A-Z]/.test(passwordValue)) {
+        password.setCustomValidity("Password must be at least 8 characters long.");
+    } else if (!/[A-Z]/.test(passwordValue)) {
         // Password does not contain an uppercase letter
-//        password.setCustomValidity("Password must contain at least one uppercase letter.");
-//    } else if (!/[a-z]/.test(passwordValue)) {
+        password.setCustomValidity("Password must contain at least one uppercase letter.");
+    } else if (!/[a-z]/.test(passwordValue)) {
         // Password does not contain a lowercase letter
-//        password.setCustomValidity("Password must contain at least one lowercase letter.");
-//    } else if (!/\d/.test(passwordValue)) {
+        password.setCustomValidity("Password must contain at least one lowercase letter.");
+    } else if (!/\d/.test(passwordValue)) {
         // Password does not contain a digit
-//        password.setCustomValidity("Password must contain at least one digit.");
-//    } else {
+        password.setCustomValidity("Password must contain at least one digit.");
+    } else {
         // Password is valid
-//        password.setCustomValidity("");
-//    }
-//  });
-</script> 
+        password.setCustomValidity("");
+    }
+  });
+  </script> 
 </body>
 </html>
