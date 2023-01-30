@@ -1,3 +1,4 @@
+
 <?php
 
 $emailcorrect = true;
@@ -96,15 +97,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sign Up</title>
-<meta charset="utf-8">
-    <title>Signup</title>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free Website Template" name="keywords">
     <meta content="Free Website Template" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -114,32 +113,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" class="external"  rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" class="external"  rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/style.min.css" class="external" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar Start -->
     <div class="container-fluid p-0 nav-bar">
         <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
             <a href="index.html" class="navbar-brand px-lg-4 m-0">
-                <h1 class="m-0 display-4 text-uppercase text-white">Ski. I. P</h1>
+                <h1 class="m-0 display-4 text-uppercase text-white">Ski. I. P.</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto p-4">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
                     <a href="reservation.html" class="nav-item nav-link">Reserve</a>
-                    <a href="about.html" class="nav-item nav-link">About us</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">My Ski. I. P</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">My Ski. I. P.</a>
                         <div class="dropdown-menu text-capitalize">
-                            <a href="login.html" class="dropdown-item">Login</a>
-                            <a href="/Pagina's/signup.php" class="dropdown-item active">Signup</a>
+                            <a href="login.html" class="dropdown-item">Log In</a>
+                            <a href="/Pagina's/signup.php" class="dropdown-item">Sign Up</a>
                         </div>
                     </div>
                     
@@ -148,6 +147,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         </nav>
     </div>
     <!-- Navbar End -->
+
 
   <div class="col-md-6 pb-5">
     <div class="contact-form">
@@ -195,7 +195,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 
 <!-- Footer Start -->
-<div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
+    <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
         <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Get In Touch</h4>
@@ -231,12 +231,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/tempusdominus/js/moment.min.js"></script>
-<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="lib/easing/easing.min.js" class="external">  </script>
+<script src="lib/waypoints/waypoints.min.js" class="external"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js" class="external"></script>
+<script src="lib/tempusdominus/js/moment.min.js" class="external"></script>
+<script src="lib/tempusdominus/js/moment-timezone.min.js" class="external"></script>
+<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js" class="external"></script>
 
 <!-- Contact Javascript File -->
 <script src="mail/jqBootstrapValidation.min.js"></script>
@@ -246,9 +246,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <script src="js/main.js"></script>
 
 <script>
-
-
-  
+$(document).singlePageNav({filter: ':not(.external)'});
 // Get the password input field
 var password = document.getElementById("Password");
 
