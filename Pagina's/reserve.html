@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>My Reservations</title>
+<style>
+/* Create a top navigation bar with a black background color  */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create a right-aligned (split) link inside the navigation bar */
+.topnav a.split {
+  float: right;
+  background-color: #04AA6D;
+  color:white;
+  overflow: hidden;
+}
+.active {
+  background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+var subjectObject = {
+    "Sklift 1": {
+    "12:00": ["1", "2", "3", "4"],
+    "13:00": ["1"],
+    "14:00": ["1", "2", "3", "4", "5", "6"]    
+    },
+    "Skilift 2": {
+    "09:00": ["1", "2"],
+    "10:00": ["1", "2", "3", "4", "5", "6", "7", "8"]
+    }
+}
+window.onload = function() {
+    var subjectSel = document.getElementById("skilift");
+    var topicSel = document.getElementById("tijd");
+    var chapterSel = document.getElementById("personen");
+    for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+    }
+    subjectSel.onchange = function() {
+ //empty Chapters- and Topics- dropdowns
+chapterSel.length = 1;
+topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+        topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+    }
+    topicSel.onchange = function() {
+//empty Chapters dropdown
+chapterSel.length = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+        chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+    }
+}
+</script>
+</head>
+
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="topnav">
+    <a href="/index.html"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a class="active" href="/Pagina's/reserve.html">Reserve</a>
+    <a href="/Pagina's/myreservations.html">My Reservations</a>
+    <a href="/Pagina's/about.html"><i class="fa fa-fw fa-envelope"></i>About</a>
+    <a href="/Pagina's/signup.html" class="split"></i>Sign up</a>
+    <a href="/Pagina's/login.html" class="split"><i class="fa fa-fw fa-user"></i>Log in</a>
+</div>
+<br>
+<form name="reserve" id="reserveren" action="/index.html">
+    Skilift: <select name="skilift" id="skilift">
+        <option value="" selected="selected">Selecteer skilift</option>
+    </select>
+    <br><br>
+    Tijd: <select name="tijd" id="tijd">
+        <option value="" selected="selected">Selecteer eerst de skilift</option>
+    </select>
+    <br><br>
+    Aantal personen: <select name="personen" id="personen">
+        <option value="" selected="selected">Selecteer eerst de tijd</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Reserveer"> 
+    </form>
+
+
+
+</body>
+
+</html>
